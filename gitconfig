@@ -1,0 +1,5 @@
+[user]
+	name = roselino-quatro
+	email = lou.roselino@gmail.com
+[core]
+	excludesfile = /home/lourenco/.gitignore_global

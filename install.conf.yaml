@@ -8,5 +8,7 @@
     ~/.zshrc: zshrc
     ~/.alias: alias
     ~/.nowplaying: nowplaying
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
 
 
