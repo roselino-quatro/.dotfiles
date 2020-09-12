@@ -1,35 +1,20 @@
-"                         ╔══════════════════════════╗
-"                         ║                          ║
-"                         ║ "Configuraçãoes de VIM"  ║
-"                         ║"Autor: Marcelo de Moraes"║
-"                         ║                          ║
-"                         ╚══════════════════════════╝
 
-"Essas configurações foram feitas objetivando um melhor uso do editor VIM.
-"Tudo foi bem comentado para melhor compreenção do que está acontecendo.
-"Para mais detalhes sobre as configurações usar :h nomeDaConfig
-"ex da opcao 'title' -> :h title
+" 
+"    ██████╗ ██╗     ██╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗
+"    ██╔══██╗██║     ██║   ██║██╔════╝ ██║████╗  ██║██╔════╝
+"    ██████╔╝██║     ██║   ██║██║  ███╗██║██╔██╗ ██║███████╗
+"    ██╔═══╝ ██║     ██║   ██║██║   ██║██║██║╚██╗██║╚════██║
+"    ██║     ███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║███████║
+"    ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
+"
 
-"Espero que goste :)
-
-
-
-
-
-"   ◤                        ◥   "
-"    Gerenciador de Plugins      "
-"            Vim Plug            "
-"   ◣                        ◢   "
-
-
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              " Necessary for Vundle, better configs at the cost of compatibility with Vi
+filetype off                  
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
+
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'preservim/nerdtree'
 Plugin 'preservim/nerdcommenter'
@@ -45,63 +30,68 @@ Plugin 'xdg/vim-darkluma'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+
+
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"     ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ ███████╗
+"    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ ██╔════╝
+"    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗███████╗
+"    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║╚════██║
+"    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝███████║
+"     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝
 "
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 
 
-
-"   ◤                        ◥   "
-"    INÍCIO DAS CONFIGURAÇÕES    "
-"   ◣                        ◢   "
-
-" Configurações de plugins
+" Some plugins configurations
 let g:airline_powerline_fonts = 1
 
 let g:rainbow_active = 1
-" Muda o leader de / para ,
-let mapleader = ","
+
 let g:neocomplete#enable_at_startup = 1
-let g:NERDSpaceDelims = 1 "add um espaco no comando de comentar
+let g:NERDSpaceDelims = 1 " Adds a space before comments
 
 
+set relativenumber
 
-"   ◤        ◥   "
-"      MAPS      "
-"   ◣        ◢   "
-"leader + f altera entre numero absoluto e relativo
+"
+"    ███╗   ███╗ █████╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗ ███████╗
+"    ████╗ ████║██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝
+"    ██╔████╔██║███████║██████╔╝██████╔╝██║██╔██╗ ██║██║  ███╗███████╗
+"    ██║╚██╔╝██║██╔══██║██╔═══╝ ██╔═══╝ ██║██║╚██╗██║██║   ██║╚════██║
+"    ██║ ╚═╝ ██║██║  ██║██║     ██║     ██║██║ ╚████║╚██████╔╝███████║
+"    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
+"   
+
+" Change leader key to ','
+let mapleader = ","
+
+" <leader> + f toggles relativenumber
 map <leader>f :set relativenumber!<CR>
 
-" Y age como D e C, copia ate o final da linha, ao inves de agir como yy
-map Y y$
-
-
-"leader + espaço remove o highlight da pesquisa
+"leader + space clears search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-" Shortcut de esconder/mostrar o fold com espaco
+" Shortcut to hiding folds
 nnoremap <space> za
 
-" crtl+n abre a nerdtree
+" crtl+n  opens NerdTree
 map <C-n> :NERDTreeToggle<CR>
 
-"Setas nao funcionam mais(apenas h, j , k, l)
+" Arrows dont work anymore
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-"Salva o arquivo com ;;
+" Saving with ;;
 nnoremap ;; :w<CR>
+
+" Changes panes with Ctrl + direction
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
 
 
 
@@ -118,6 +108,7 @@ set noshowmode "desabilita informacoes inferiores i.e. -- INSERT -- , reduntante
 "   ◤          ◥   "
 "    Indentação    "
 "   ◣          ◢   "
+
 filetype plugin indent on
 set autoindent "indentacao automatica
 set cindent "indentacao para linguagem C
@@ -127,7 +118,6 @@ set backspace=indent,eol,start
 let delimitMate_expand_cr=1
 set shiftwidth=4 "tamanho do tab na indentacao
 set tabstop=4 "tab 4 espacos
-
 
 
 "   ◤         ◥   "
