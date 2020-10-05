@@ -25,7 +25,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'w0rp/ale'
 Plugin 'valloric/youcompleteme'
-Plugin 'xdg/vim-darkluma'
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -98,7 +98,7 @@ noremap <C-k> <C-w>k
 "   ◤       ◥   "
 "     CORES     "
 "   ◣       ◢   "
-colorscheme darkluma 
+colorscheme Revolution
 
 let g:airline_theme='ouo'
 set noshowmode "desabilita informacoes inferiores i.e. -- INSERT -- , reduntante

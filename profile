@@ -27,3 +27,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export QSYS_ROOTDIR="/home/lourenco/altera/14.0/quartus/sopc_builder/bin"
+
+export PATH="$HOME/.cargo/bin:$PATH"
