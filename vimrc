@@ -69,6 +69,10 @@ let mapleader = ","
 " <leader> + f toggles relativenumber
 map <leader>f :set relativenumber!<CR>
 
+" Changes vsplit sizes
+map <leader>a :vertical size -5
+map <leader>s :vertical size +5
+
 "leader + space clears search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 

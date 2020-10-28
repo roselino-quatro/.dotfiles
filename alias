@@ -1,5 +1,7 @@
-alias l="ls -la"       # List in long format, include dotfiles
+alias l="ls -lAh"      # List in long format, include dotfiles
 alias dl="ls -lda */"  # List in long format, only directories
 alias plewasy="sudo"   # Alias for sudo, just for fun
-alias proj="cd ~/projetos" # Moves to my project diretory
+alias proj="cd ~/projetos" # Moves to my project directory
+alias sem="cd ~/projetos/semestre2" # Moves to my current semester diretory
 alias clean="rm *~"    # Removes temporary files
+alias op="xdg-open"	   # Opens a file
