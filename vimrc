@@ -99,9 +99,16 @@ noremap <C-k> <C-w>k
 
 
 
-"   ◤       ◥   "
-"     CORES     "
-"   ◣       ◢   "
+
+"
+"     ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗ ██████╗██╗  ██╗███████╗███╗   ███╗███████╗
+"    ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝██╔════╝██║  ██║██╔════╝████╗ ████║██╔════╝
+"    ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗██║     ███████║█████╗  ██╔████╔██║█████╗
+"    ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║██║     ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝
+"    ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║╚██████╗██║  ██║███████╗██║ ╚═╝ ██║███████╗
+"     ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝
+"
+
 colorscheme Revolution
 
 let g:airline_theme='ouo'
@@ -109,10 +116,15 @@ set noshowmode "desabilita informacoes inferiores i.e. -- INSERT -- , reduntante
 
 
 
-"   ◤          ◥   "
-"    Indentação    "
-"   ◣          ◢   "
-
+"
+"    ██╗███╗   ██╗██████╗ ███████╗███╗   ██╗████████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+"    ██║████╗  ██║██╔══██╗██╔════╝████╗  ██║╚══██╔══╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+"    ██║██╔██╗ ██║██║  ██║█████╗  ██╔██╗ ██║   ██║   ███████║   ██║   ██║██║   ██║██╔██╗ ██║
+"    ██║██║╚██╗██║██║  ██║██╔══╝  ██║╚██╗██║   ██║   ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+"    ██║██║ ╚████║██████╔╝███████╗██║ ╚████║   ██║   ██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+"    ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+"
+                                                                                       
 filetype plugin indent on
 set autoindent "indentacao automatica
 set cindent "indentacao para linguagem C
@@ -124,9 +136,15 @@ set shiftwidth=4 "tamanho do tab na indentacao
 set tabstop=4 "tab 4 espacos
 
 
-"   ◤         ◥   "
-"      Geral      "
-"   ◣         ◢   "
+"
+"     ██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ██╗     
+"    ██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗██║     
+"    ██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║██║     
+"    ██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║██║     
+"    ╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║███████╗
+"     ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+"                                                           
+
 syntax enable "ative highlight de sintaxe
 set number "numero da linha
 set cursorline "highlight na linha atual
@@ -151,10 +169,27 @@ if has("autocmd")
 endif
 
 			
+" Pesquisa
+set incsearch "highlight na pesquisa equanto eh realizada
+set hlsearch "highlight apos a pesquisa ser feita
 
-"   ◤        ◥   "
-"      Undo      "
-"   ◣        ◢   "
+
+" Folds - esconde linhas
+set foldenable "habilita poder usar o fold
+set foldlevelstart=10 "nivel inicial de folding, pra nao dobrar tudo no inicio, quanto mais {{, maior o nivel
+set foldnestmax=10
+set foldmethod=syntax "usa sintaxe para esconder: {} em C
+
+
+"
+"    ██╗   ██╗███╗   ██╗██████╗  ██████╗
+"    ██║   ██║████╗  ██║██╔══██╗██╔═══██╗
+"    ██║   ██║██╔██╗ ██║██║  ██║██║   ██║
+"    ██║   ██║██║╚██╗██║██║  ██║██║   ██║
+"    ╚██████╔╝██║ ╚████║██████╔╝╚██████╔╝
+"     ╚═════╝ ╚═╝  ╚═══╝╚═════╝  ╚═════╝
+"
+
 "Garante que a a pasta que armazena os Undo exista
 if !isdirectory($HOME."/.vim")
   call mkdir($HOME."/.vim", "", 0770)
@@ -167,13 +202,3 @@ set undofile "permite que o historico de undos seja salvo em um arquivo
 set undolevels=1000 "tamanho do historico de undos
 
 
-" Pesquisa
-set incsearch "highlight na pesquisa equanto eh realizada
-set hlsearch "highlight apos a pesquisa ser feita
-
-
-" Folds - esconde linhas
-set foldenable "habilita poder usar o fold
-set foldlevelstart=10 "nivel inicial de folding, pra nao dobrar tudo no inicio, quanto mais {{, maior o nivel
-set foldnestmax=10
-set foldmethod=syntax "usa sintaxe para esconder: {} em C

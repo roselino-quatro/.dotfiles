@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/lourenco/.oh-my-zsh"
+ZSH=$HOME/.oh-my-zsh
 
 # Uses hyphen insensitive completion aka - and _ are interchangeable
 HYPHEN_INSENSITIVE="true"
