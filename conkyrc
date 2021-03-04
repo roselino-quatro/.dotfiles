@@ -1,0 +1,99 @@
+conky.config = {
+  alignment = 'top_right',
+  background = true,
+  border_width = 100.5,
+  cpu_avg_samples = 4,
+  default_color = 'white',
+  default_outline_color = 'grey',
+  default_shade_color = 'black',
+  draw_borders = true,
+  draw_graph_borders = true,
+  draw_outline = false,
+  draw_shades = false,
+  use_xft = true,
+  font = 'DejaVu Sans Mono:size=10',
+  gap_x = 50,
+  gap_y = 80,
+  maximum_width = 480,
+  minimum_height = 5,
+  minimum_width = 5,
+  net_avg_samples = 2,
+  double_buffer = true,
+  out_to_console = false,
+  out_to_stderr = false,
+  extra_newline = false,
+  own_window = true,
+  own_window_colour = '000820',
+  own_window_class = 'Conky',
+  own_window_argb_visual = true,
+  own_window_argb_value = 200,
+  own_window_type = 'dock',
+  own_window_transparent = false,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  stippled_borders = 0,
+  update_interval = 1,
+  uppercase = false,
+  use_spacer = 'none',
+  show_graph_scale = false,
+  show_graph_range = false
+}
+
+conky.text = [[
+  $color${font}${font Open Sans:size=44}$alignc${time %H:%M}$font$color${font Open Sans:size=15}
+  $alignc${time %a}, ${time %d %b %Y}$font$color
+  # RAFAQUATRO
+  ${font Open Sans:Bold:size=15}${color 4C7523} $alignc RAFAQUATRO
+  # SYS
+  ${font Open Sans:Bold:size=10}${color 4C7523}SYSTEM ${hr 2}$color${font}${offset 1}
+  Kernel $alignr $kernel  
+  Uptime $alignr $uptime  
+
+  # Intel i5-8300H
+  ${font Open Sans:Bold:size=10}${color 4C7523}Intel i5-8300H ${hr 2}$color${font}${offset 1}
+  $color${font}Usage $alignr $cpu %  
+  Temperature $alignr ${acpitemp}°C  
+
+  # GeForce GTX 1050 Mobile
+  ${font Open Sans:Bold:size=10}${color 4C7523}GeForce GTX 1050 ${hr 2}$color${font}${offset 1}
+
+  Frequency $alignr ${nvidia gpufreq} Mhz  
+  Memory $alignr ${nvidia memfreq} Mhz  
+  Temperature $alignr ${nvidia temp}°C  
+
+  # RAM
+  ${font Open Sans:Bold:size=10}${color 4C7523}RAM ${hr 2}$color${font}${offset 1}
+  Total $alignr $memmax  
+  In use $alignr $mem  
+  Free $alignr $memeasyfree  
+  Buffers $alignr $buffers  
+  Cache $alignr $cached  
+
+  # PROCESSES
+  ${font Open Sans:Bold:size=10}${color 4C7523}PROCESSES ${hr 2}$color${font}${offset 1}
+  $color${font Open Sans:bold:size=8}CPU$font
+${offset 15}${font Noto sans:size=8}${color EDE0FF}Name               ${alignr}PID   CPU%   MEM%  
+${offset 15}${color FF7878}${top name 1} ${alignr}${top pid 1} ${top cpu 1} ${top mem 1}  
+${offset 15}${color FF7878}${top name 2} ${alignr}${top pid 2} ${top cpu 2} ${top mem 2}  
+${offset 15}${color FF7878}${top name 3} ${alignr}${top pid 3} ${top cpu 3} ${top mem 3}  
+${offset 15}${color FF7878}${top name 4} ${alignr}${top pid 4} ${top cpu 4} ${top mem 4}  
+
+  # 1 TB 
+  ${font Open Sans:Bold:size=10}${color 4C7523}Hard Drive-1TB ${hr 2}$color${font}${offset 1}
+ ${offset 4}${color FFFDE2}home (${fs_type /home}) $color${fs_bar 4 /home/}
+ ${offset 4}Total: $alignr ${fs_size /home/}  
+ ${offset 4}Free: $alignr ${fs_free /home/}  
+ ${offset 4}Used: $alignr ${fs_used /home/}  
+
+
+  ${font :size=11}${color 4C7523}NETWORK ${color6}${hr 2}${color}
+  ${voffset -15}
+  ${font Montserrat Light:size=8}${color1}LAN IP ADDR:${color}${font} ${alignr}${addr wlp3s0} 
+  ${font :size=10}${font Montserrat Light:size=8}${color1}SPEED: ${goto 70}UP:${color}${font} ${alignr}${upspeed wlp3s0}   ${goto 180}${font Montserrat Light:size=8}${color1}DOWN:${color}${font} ${goto 220}${alignr}${downspeed wlp3s0}${font} 
+  ${voffset -6} 
+  ${font Montserrat Light:size=8}${color1}UPLOAD: ${color}${font} ${goto 80}${color4}${upspeedgraph wlp3s0 15,210 ADFF2F 32CD32 -t}${color} 
+  ${voffset -14} 
+  ${font Montserrat Light:size=8}${color1}DOWN: ${color}${font} ${goto 80}${color4}${downspeedgraph wlp3s0 15,210 FF0000 8B0000 -t}${color} 
+  ${voffset -14} 
+  ${font :size=10}${font Montserrat Light:size=8}${color1}TOTAL: ${goto 70}UP:${color}${font} ${goto 120}${totalup wlp3s0}   ${goto 180}${font Montserrat Light:size=8}${color1}DOWN:${color}${font} ${goto 220}${alignr}${totaldown wlp3s0}${font} 
+  ${voffset 6} 
+]]

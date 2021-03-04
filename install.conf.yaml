@@ -2,13 +2,24 @@
 
 - link:
     ~/.profile: profile
-    ~/.bashrc: bashrc
+    ~/.bashrc:
+      force: true
+      path: bashrc
     ~/.bash_logout: bash_logout
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
+    ~/.vimrc:
+      relink: true
+      path: vimrc
+    ~/.zshrc:
+      force: true
+      path: zshrc
     ~/.alias: alias
-    ~/.nowplaying: nowplaying
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
+    ~/.config/conky/.conkyrc:
+      create: true
+      path: conkyrc
+
+- shell:
+  - chsh -s $(which zsh)
 
 
