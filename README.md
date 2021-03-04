@@ -18,19 +18,19 @@ Dotfiles are user-specific configuration files, usually starting with a dot, hen
 
 <details>
   <summary> Vim </summary>
-<img src="https://imgur.com/gTRiQ2b"  alt="Vim Screenshot"/>
+<img src="https://i.imgur.com/gTRiQ2b.png"  alt="Vim Screenshot"/>
 
 </details>
 
 <details>
   <summary> ZSH </summary>
-<img src="https://imgur.com/oO5H4qE"  alt="Zsh"/>
+<img src="https://i.imgur.com/oO5H4qE.png"  alt="Zsh"/>
 
 </details>
 
 <details>
   <summary> Conky </summary>
-<img src="https://imgur.com/ujyhY38"  alt="Conky"/>
+<img src="https://i.imgur.com/ujyhY38.png"  alt="Conky"/>
 
 </details>
 
