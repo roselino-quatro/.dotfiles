@@ -24,5 +24,8 @@
     ~/.config/conky/.conkyrc:
       create: true
       path: conkyrc
+    ~/.config/kitty/kitty.conf:
+      create: true
+      path: kitty.conf
 
 
